@@ -28,4 +28,7 @@ Run it
 ```bash
 go run perplexity.go
 ```
+## Authors
+
+- [@seanm603](https://www.github.com/seanm603)
 
