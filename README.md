@@ -1,34 +1,58 @@
-
 # Perplexity API Interface
 
-This is a [Go](https://go.dev/doc/) script for interacting with the [Perplexity AI](https://docs.perplexity.ai/home) chat completions API via the CLI.
+A Python client for interacting with the Perplexity AI chat completions API.
 
+## Features
 
+- Secure API key handling with encryption
+- Support for both regular and streaming responses
+- Configurable model parameters
+- Built-in error handling and timeout management
+- Environment variable configuration
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+Required environment variable in your .env file:
+- PPLX_API_KEY (Generate your API key at Perplexity AI settings page)
 
-`PPLX_API_KEY`
+## Installation
 
-[Generate an API key](https://www.perplexity.ai/settings/api)
-## Deployment
-
-Clone the repository
-
-```bash
-  git clone https://github.com/mclaughco/perplexity-api.git
+1. Clone the repository:
 ```
-Add your `.env` file
-```bash
-touch .env
-echo "PPLX_API_KEY={your-key}" >> .env
+git clone https://github.com/mclaughco/perplexity-api.git
 ```
-Run it
-```bash
-go run perplexity.go
+
+2. Install dependencies:
 ```
+pip install -r requirements.txt
+```
+
+## Configuration Options
+
+The API client supports various configuration parameters:
+- Model selection
+- Temperature control
+- Token limits
+- Presence and frequency penalties
+- Search domain and recency filters
+- Related questions and image return options
+
+## Usage
+
+Basic example:
+```
+from perplexity_api import PerplexityAPI
+
+client = PerplexityAPI()
+response = client.query(
+    prompt="Your question here",
+    system_prompt="Be precise and concise."
+)
+```
+
 ## Authors
+- @seanm603
 
-- [@seanm603](https://www.github.com/seanm603)
-
+## License
+MIT License
+```
